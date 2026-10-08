@@ -1,0 +1,15 @@
+/* Navbar.css — responsive breakpoints for Navbar.jsx */
+
+/* Desktop: show center links + right CTA, hide hamburger + mobile menu */
+.nav-center-links { display: flex; }
+.nav-right-desk   { display: block; }
+.nav-hamburger    { display: none !important; }
+.nav-mobile-menu  { display: none !important; }
+
+/* Mobile: hide desktop nav, show hamburger */
+@media (max-width: 767px) {
+  .nav-center-links { display: none !important; }
+  .nav-right-desk   { display: none !important; }
+  .nav-hamburger    { display: flex !important; }
+  .nav-mobile-menu  { display: block !important; }
+}

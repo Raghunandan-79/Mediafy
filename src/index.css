@@ -1,1 +1,70 @@
+@import "../tokens.css";
 @import "tailwindcss";
+
+/* ── Base resets ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-style: normal;  /* no italic headers — Hallmark rule */
+  line-height: var(--leading-tight);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Focus ring — global, instant, high-contrast ─────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Scrollbar — subtle dark ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-paper-2); }
+::-webkit-scrollbar-thumb { background: var(--color-paper-5); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-3); }
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
